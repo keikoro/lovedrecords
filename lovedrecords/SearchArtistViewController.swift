@@ -22,7 +22,13 @@ class SearchArtistViewController: UIViewController, UITextFieldDelegate {
         // round corners for powered by label
         poweredBy.clipsToBounds = true
         poweredBy.layer.cornerRadius = 3
-
+    }
+    
+    
+    @IBAction func lastfmLink(sender: AnyObject) {
+        if let url = NSURL(string: "https://last.fm") {
+            UIApplication.sharedApplication().openURL(url)
+        }
     }
 
     override func didReceiveMemoryWarning() {
