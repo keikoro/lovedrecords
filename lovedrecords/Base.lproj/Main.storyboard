@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gpz-aK-0r8">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Search Artist View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="lovedrecords" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchArtistViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="SearchArtistViewController" customModule="lovedrecords" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +17,132 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter artist name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cph-LK-m9W">
+                                <rect key="frame" x="20" y="192" width="449" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="GRL-ll-Vel"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="LovedRecords can help you find out which albums by your favourite artists fans love the most!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHT-zc-DaV">
+                                <rect key="frame" x="20" y="72" width="560" height="92"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.85882352939999995" green="0.17254901959999999" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="powered by last.fm" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jm1-8n-1NW">
+                                <rect key="frame" x="438" y="550" width="142" height="30"/>
+                                <color key="backgroundColor" red="0.85882352939999995" green="0.17254901959999999" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRT-ZT-vtB">
+                                <rect key="frame" x="531" y="192" width="49" height="30"/>
+                                <state key="normal" title="Submit"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="rRT-ZT-vtB" secondAttribute="trailing" id="KY7-QO-3fM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CHT-zc-DaV" secondAttribute="trailing" constant="40" id="KdE-uy-4fb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jm1-8n-1NW" secondAttribute="trailing" id="MvS-jJ-9Gg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rRT-ZT-vtB" secondAttribute="trailing" id="PyE-gl-onJ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jm1-8n-1NW" secondAttribute="bottom" constant="20" id="TOY-Bf-HBX"/>
+                            <constraint firstItem="CHT-zc-DaV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="TXP-6x-ohQ"/>
+                            <constraint firstItem="rRT-ZT-vtB" firstAttribute="top" secondItem="CHT-zc-DaV" secondAttribute="bottom" constant="14" id="Tu3-Mn-d45"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="cph-LK-m9W" secondAttribute="leading" id="aWE-X3-rcY"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="CHT-zc-DaV" secondAttribute="leading" id="hDL-8Z-6IQ"/>
+                            <constraint firstItem="cph-LK-m9W" firstAttribute="top" secondItem="CHT-zc-DaV" secondAttribute="bottom" constant="14" id="qFa-n9-W5w"/>
+                            <constraint firstItem="rRT-ZT-vtB" firstAttribute="leading" relation="lessThanOrEqual" secondItem="cph-LK-m9W" secondAttribute="trailing" constant="42" id="w6P-Wg-Fjg"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="CoZ-CJ-kLA"/>
+                    <connections>
+                        <outlet property="artistSearchField" destination="cph-LK-m9W" id="f48-Qa-xhC"/>
+                        <outlet property="introText" destination="CHT-zc-DaV" id="yUb-4b-Ms9"/>
+                        <outlet property="poweredByLastfm" destination="jm1-8n-1NW" id="6oS-gq-48V"/>
+                        <outlet property="startSearchButton" destination="rRT-ZT-vtB" id="kr0-pG-uWM"/>
+                        <segue destination="EYD-n8-6QH" kind="show" identifier="resultViewSegue" id="SZi-a9-BPU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1117" y="387"/>
+        </scene>
+        <!--Top Album View Controller-->
+        <scene sceneID="YHD-qR-7DJ">
+            <objects>
+                <viewController storyboardIdentifier="TopAlbumViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EYD-n8-6QH" customClass="TopAlbumViewController" customModule="lovedrecords" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="P0D-4U-gyJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="CSb-A6-jJ7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3bo-TL-1Xp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Album" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4HH-Py-5a7">
+                                <rect key="frame" x="20" y="132" width="560" height="73"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xe1-Xc-5yL">
+                                <rect key="frame" x="20" y="213" width="367" height="367"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1234" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61A-My-Jdl">
+                                <rect key="frame" x="420" y="474" width="160" height="106"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Playcount" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oyp-Z6-ZQp">
+                                <rect key="frame" x="504" y="474" width="76" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjW-0V-UST">
+                                <rect key="frame" x="20" y="72" width="281" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="albumCover" destination="xe1-Xc-5yL" id="6dt-6D-fyE"/>
+                        <outlet property="albumName" destination="4HH-Py-5a7" id="xpa-Js-jDG"/>
+                        <outlet property="artistName" destination="jjW-0V-UST" id="zrM-bL-3zW"/>
+                        <outlet property="playCount" destination="61A-My-Jdl" id="Uya-h4-5eC"/>
+                        <outlet property="playCountLabel" destination="Oyp-Z6-ZQp" id="9dq-4s-P8t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uHH-R7-XVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1803" y="387"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8Sr-b1-6XA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gpz-aK-0r8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="isw-0F-kyE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="gEg-D9-1g5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JIg-Qx-Bdy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="429" y="387"/>
         </scene>
     </scenes>
 </document>

@@ -1,19 +1,30 @@
 //
-//  TopAlbumsViewController.swift
+//  TopAlbumViewController.swift
 //  lovedrecords
 //
-//  Copyright (c) 2015 K Kollmann.
-//  All rights reserved.
+//  Created by Kay on 30/11/15.
+//  Copyright © 2015 KK. All rights reserved.
 //
 
 import UIKit
 
-class TopAlbumsViewController: UIViewController {
+class TopAlbumViewController: UIViewController {
 
+    // UI elements
+    @IBOutlet weak var artistName: UILabel!
+    @IBOutlet weak var albumName: UILabel!
+    @IBOutlet weak var albumCover: UIImageView!
+    @IBOutlet weak var playCountLabel: UILabel!
+    @IBOutlet weak var playCount: UILabel!
+    
+    var input: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        albumCover.layer.cornerRadius = 30
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,7 +32,6 @@ class TopAlbumsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 

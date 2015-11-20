@@ -10,6 +10,13 @@ import UIKit
 
 class SearchArtistViewController: UIViewController {
 
+    // UI elements
+    @IBOutlet weak var introText: UILabel!
+    @IBOutlet weak var artistSearchField: UITextField!
+    @IBOutlet weak var startSearchButton: UIButton!
+    @IBOutlet weak var poweredByLastfm: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +28,16 @@ class SearchArtistViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    // segue connecting
+    // SearchArtist with TopAlbum
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if (segue.identifier == "mySegue") {
+            let searchTerm = segue.destinationViewController as! TopAlbumViewController
+            searchTerm.input = self.artistSearchField.text!
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
