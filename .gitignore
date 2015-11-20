@@ -1,0 +1,12 @@
+# Mac general
+**.DS_Store
+**.Trashes
+**.swp
+
+# Xcode
+**build/
+**DerivedData/
+**UserInterfaceState.xcuserstate
+**xcuserdata/
+**.moved-aside
+**~.nib
