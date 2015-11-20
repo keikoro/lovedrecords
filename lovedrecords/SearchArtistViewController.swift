@@ -8,19 +8,21 @@
 
 import UIKit
 
-class SearchArtistViewController: UIViewController {
+class SearchArtistViewController: UIViewController, UITextFieldDelegate {
 
     // UI elements
     @IBOutlet weak var introText: UILabel!
     @IBOutlet weak var artistSearchField: UITextField!
     @IBOutlet weak var startSearchButton: UIButton!
-    @IBOutlet weak var poweredByLastfm: UITextField!
-    
-    
+    @IBOutlet weak var poweredBy: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // round corners for powered by label
+        poweredBy.clipsToBounds = true
+        poweredBy.layer.cornerRadius = 3
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,11 +34,17 @@ class SearchArtistViewController: UIViewController {
     // SearchArtist with TopAlbum
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if (segue.identifier == "mySegue") {
-            let searchTerm = segue.destinationViewController as! TopAlbumViewController
-            searchTerm.input = self.artistSearchField.text!
+        if (segue.identifier == "segueToAlbum") {
+            let seg = segue.destinationViewController as! TopAlbumViewController
+            seg.searchTerm = self.artistSearchField.text!
         }
     }
+    
+    func textFieldShouldReturn(artistSearchField: UITextField) -> Bool {
+        artistSearchField.resignFirstResponder()
+        return true
+    }
+    
     
     /*
     // MARK: - Navigation

@@ -17,13 +17,12 @@ class TopAlbumViewController: UIViewController {
     @IBOutlet weak var playCountLabel: UILabel!
     @IBOutlet weak var playCount: UILabel!
     
-    var input: String = ""
+    var searchTerm: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
+        // round corners for image
         albumCover.layer.cornerRadius = 30
     }
 
