@@ -14,6 +14,8 @@
 		6A53BCB51C0BD4520000FE2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A53BCB41C0BD4520000FE2C /* Assets.xcassets */; };
 		6A53BCB81C0BD4520000FE2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A53BCB61C0BD4520000FE2C /* LaunchScreen.storyboard */; };
 		6A53BCC31C0BD4520000FE2C /* lovedrecordsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A53BCC21C0BD4520000FE2C /* lovedrecordsTests.swift */; };
+		6A53BCCE1C0BD8970000FE2C /* SearchArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A53BCCD1C0BD8970000FE2C /* SearchArtistViewController.swift */; };
+		6A53BCD01C0BD8BA0000FE2C /* TopAlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A53BCCF1C0BD8BA0000FE2C /* TopAlbumsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		6A53BCBE1C0BD4520000FE2C /* lovedrecordsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lovedrecordsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A53BCC21C0BD4520000FE2C /* lovedrecordsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lovedrecordsTests.swift; sourceTree = "<group>"; };
 		6A53BCC41C0BD4520000FE2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A53BCCD1C0BD8970000FE2C /* SearchArtistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchArtistViewController.swift; sourceTree = "<group>"; };
+		6A53BCCF1C0BD8BA0000FE2C /* TopAlbumsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopAlbumsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 				6A53BCB61C0BD4520000FE2C /* LaunchScreen.storyboard */,
 				6A53BCB91C0BD4520000FE2C /* Info.plist */,
 				6A53BCB11C0BD4520000FE2C /* lovedrecords.xcdatamodeld */,
+				6A53BCCD1C0BD8970000FE2C /* SearchArtistViewController.swift */,
+				6A53BCCF1C0BD8BA0000FE2C /* TopAlbumsViewController.swift */,
 			);
 			path = lovedrecords;
 			sourceTree = "<group>";
@@ -202,8 +208,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A53BCD01C0BD8BA0000FE2C /* TopAlbumsViewController.swift in Sources */,
 				6A53BCB31C0BD4520000FE2C /* lovedrecords.xcdatamodeld in Sources */,
 				6A53BCAD1C0BD4520000FE2C /* ViewController.swift in Sources */,
+				6A53BCCE1C0BD8970000FE2C /* SearchArtistViewController.swift in Sources */,
 				6A53BCAB1C0BD4520000FE2C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
