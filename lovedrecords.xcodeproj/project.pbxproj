@@ -83,6 +83,7 @@
 		6A53BCA91C0BD4520000FE2C /* lovedrecords */ = {
 			isa = PBXGroup;
 			children = (
+				6A53BCD31C0BF30F0000FE2C /* Resources */,
 				6A53BCAA1C0BD4520000FE2C /* AppDelegate.swift */,
 				6A53BCAE1C0BD4520000FE2C /* Main.storyboard */,
 				6A53BCD11C0BD99D0000FE2C /* TopAlbumViewController.swift */,
@@ -103,6 +104,21 @@
 				6A53BCC41C0BD4520000FE2C /* Info.plist */,
 			);
 			path = lovedrecordsTests;
+			sourceTree = "<group>";
+		};
+		6A53BCD31C0BF30F0000FE2C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6A53BCD41C0BF31C0000FE2C /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		6A53BCD41C0BF31C0000FE2C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
