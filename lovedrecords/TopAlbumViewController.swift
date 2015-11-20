@@ -22,8 +22,9 @@ class TopAlbumViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // round corners for image
-        albumCover.layer.cornerRadius = 30
+        // rounded corners for image
+        albumCover.clipsToBounds = true
+        albumCover.layer.cornerRadius = 15
     }
 
     override func didReceiveMemoryWarning() {
