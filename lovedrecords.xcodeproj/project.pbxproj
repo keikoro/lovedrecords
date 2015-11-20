@@ -16,7 +16,7 @@
 		6A53BCC31C0BD4520000FE2C /* lovedrecordsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A53BCC21C0BD4520000FE2C /* lovedrecordsTests.swift */; };
 		6A53BCCE1C0BD8970000FE2C /* SearchArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A53BCCD1C0BD8970000FE2C /* SearchArtistViewController.swift */; };
 		6A53BCD21C0BD99D0000FE2C /* TopAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A53BCD11C0BD99D0000FE2C /* TopAlbumViewController.swift */; };
-		6A53BCD61C0BF3AB0000FE2C /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 6A53BCD51C0BF3AB0000FE2C /* Images */; };
+		6A53BCD81C0BFF1B0000FE2C /* lovedrecords.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A53BCD71C0BFF1B0000FE2C /* lovedrecords.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +43,7 @@
 		6A53BCC41C0BD4520000FE2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A53BCCD1C0BD8970000FE2C /* SearchArtistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchArtistViewController.swift; sourceTree = "<group>"; };
 		6A53BCD11C0BD99D0000FE2C /* TopAlbumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopAlbumViewController.swift; sourceTree = "<group>"; };
-		6A53BCD51C0BF3AB0000FE2C /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Images; path = Assets.xcassets/Images; sourceTree = "<group>"; };
+		6A53BCD71C0BFF1B0000FE2C /* lovedrecords.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lovedrecords.png; path = Assets.xcassets/Images/lovedrecords.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +119,7 @@
 		6A53BCD41C0BF31C0000FE2C /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				6A53BCD51C0BF3AB0000FE2C /* Images */,
+				6A53BCD71C0BFF1B0000FE2C /* lovedrecords.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -210,7 +210,7 @@
 				6A53BCB81C0BD4520000FE2C /* LaunchScreen.storyboard in Resources */,
 				6A53BCB51C0BD4520000FE2C /* Assets.xcassets in Resources */,
 				6A53BCB01C0BD4520000FE2C /* Main.storyboard in Resources */,
-				6A53BCD61C0BF3AB0000FE2C /* Images in Resources */,
+				6A53BCD81C0BFF1B0000FE2C /* lovedrecords.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
