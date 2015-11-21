@@ -17,7 +17,9 @@ class TopAlbumViewController: UIViewController {
     @IBOutlet weak var playCountLabel: UILabel!
     @IBOutlet weak var playCount: UILabel!
     
-    var searchTerm: String = ""
+    var submittedValue: String = ""
+    var lastfmUrl: String = ""
+    var lastfmKey: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,46 +28,45 @@ class TopAlbumViewController: UIViewController {
         albumCover.clipsToBounds = true
         albumCover.layer.cornerRadius = 15
         
-        buildUrl()
+        let lastfmUrl = buildUrl(submittedValue)
+        print("Last.fm API request URL:") // debug
+        print(lastfmUrl) // debug
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func lastfmLink(sender: AnyObject) {
-        if let url = NSURL(string: "https://last.fm") {
-            UIApplication.sharedApplication().openURL(url)
-        }
-    }
-    
+
     // build URL for last.fm request
-    func buildUrl() {
-        // last.fm get top album from given artist
+    func buildUrl(searchTerm: String) -> String {
+        
+        // URL format to get last.fm top album for given artist:
         // http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=Artist+Name&limit=1&autocorrect=1&api_key=KEY&format=json
         
+        lastfmKey = (NSBundle.mainBundle().infoDictionary?["Last.fm API Key"])! as! String
+        print("Last.fm API Key:") // debug
+        print("\(lastfmKey)\n") // debug
+            
         // placeholder artist
-        // replace all spaces with '+' signs
         let artistInput = searchTerm
-        print("Requested artist: \n\(artistInput)\n")    // debug
-        
+        print("Requested artist:") // debug
+        print("\(artistInput)\n") // debug
+
+        // replace all spaces in artist name with '+' signs
         let artist = artistInput.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.LiteralSearch, range: nil)
         
-        
         // load last.fm key variable from Info.plist
-        if let lastfmKey = NSBundle.mainBundle().infoDictionary?["Last.fm API Key"] as? String {
-            print("Last.fm API Key: \n\(lastfmKey)\n")    // debug
-            let lastfmUrl: String
-            
+        if (lastfmKey != "") {
             // build url
             lastfmUrl = "https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&" +
                 "artist=\(artist)" +
                 "&limit=1" +
                 "&autocorrect=1" +
                 "&api_key=\(lastfmKey)" +
-            "&format=json"
-            print("Full last.fm API request URL: \n\(lastfmUrl)\n")    // debug
+                "&format=json"
         }
+        return lastfmUrl
     }
 }
