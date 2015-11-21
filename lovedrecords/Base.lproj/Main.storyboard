@@ -45,7 +45,7 @@
                                     <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="EYD-n8-6QH" kind="show" identifier="segueToAlbum" id="Pf7-Rj-Yl8"/>
+                                    <action selector="submitArtist:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A4O-0d-wiz"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="lo&lt;3dRecords" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Qr-pI-Tll">
@@ -102,6 +102,7 @@
                         <outlet property="introText" destination="CHT-zc-DaV" id="yUb-4b-Ms9"/>
                         <outlet property="poweredBy" destination="eE7-6V-R19" id="5ru-N7-JhT"/>
                         <outlet property="startSearchButton" destination="rRT-ZT-vtB" id="kr0-pG-uWM"/>
+                        <segue destination="EYD-n8-6QH" kind="show" identifier="segueToAlbum" id="qjz-Bo-BBg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
