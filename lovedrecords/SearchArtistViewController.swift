@@ -22,9 +22,14 @@ class SearchArtistViewController: UIViewController, UITextFieldDelegate {
         // round corners for powered by label
         poweredBy.clipsToBounds = true
         poweredBy.layer.cornerRadius = 3
+    
+        // load last.fm key variable from Info.plist
+        if let dictionary = NSBundle.mainBundle().infoDictionary {
+            let lastfmkey = dictionary["Last.fm API Key"] as! String
+            print("\(lastfmkey)")
+        }
     }
-    
-    
+
     @IBAction func lastfmLink(sender: AnyObject) {
         if let url = NSURL(string: "https://last.fm") {
             UIApplication.sharedApplication().openURL(url)
@@ -39,7 +44,6 @@ class SearchArtistViewController: UIViewController, UITextFieldDelegate {
     // segue connecting
     // SearchArtist with TopAlbum
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
         if (segue.identifier == "segueToAlbum") {
             let seg = segue.destinationViewController as! TopAlbumViewController
             seg.searchTerm = self.artistSearchField.text!
