@@ -10,3 +10,6 @@
 **xcuserdata/
 **.moved-aside
 **~.nib
+
+# Project config settings
+**config/
