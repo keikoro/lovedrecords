@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6A53BCAB1C0BD4520000FE2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A53BCAA1C0BD4520000FE2C /* AppDelegate.swift */; };
 		6A53BCAD1C0BD4520000FE2C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A53BCAC1C0BD4520000FE2C /* ViewController.swift */; };
 		6A53BCB01C0BD4520000FE2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A53BCAE1C0BD4520000FE2C /* Main.storyboard */; };
 		6A53BCB31C0BD4520000FE2C /* lovedrecords.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6A53BCB11C0BD4520000FE2C /* lovedrecords.xcdatamodeld */; };
@@ -17,6 +16,8 @@
 		6A53BCCE1C0BD8970000FE2C /* SearchArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A53BCCD1C0BD8970000FE2C /* SearchArtistViewController.swift */; };
 		6A53BCD21C0BD99D0000FE2C /* TopAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A53BCD11C0BD99D0000FE2C /* TopAlbumViewController.swift */; };
 		6A53BCD81C0BFF1B0000FE2C /* lovedrecords.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A53BCD71C0BFF1B0000FE2C /* lovedrecords.png */; };
+		6AD87E231C0D327300204966 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD87E221C0D327300204966 /* AppDelegate.swift */; };
+		6AD87E251C0D328600204966 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD87E241C0D328600204966 /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +32,6 @@
 
 /* Begin PBXFileReference section */
 		6A53BCA71C0BD4520000FE2C /* lovedrecords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lovedrecords.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A53BCAA1C0BD4520000FE2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A53BCAC1C0BD4520000FE2C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6A53BCAF1C0BD4520000FE2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6A53BCB21C0BD4520000FE2C /* lovedrecords.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = lovedrecords.xcdatamodel; sourceTree = "<group>"; };
@@ -45,6 +45,8 @@
 		6A53BCD11C0BD99D0000FE2C /* TopAlbumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopAlbumViewController.swift; sourceTree = "<group>"; };
 		6A53BCD71C0BFF1B0000FE2C /* lovedrecords.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lovedrecords.png; path = Assets.xcassets/Images/lovedrecords.png; sourceTree = "<group>"; };
 		6A8694A01C0CCDED0043EB33 /* lovedrecords.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = lovedrecords.xcconfig; sourceTree = "<group>"; };
+		6AD87E221C0D327300204966 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6AD87E241C0D328600204966 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,13 +88,14 @@
 		6A53BCA91C0BD4520000FE2C /* lovedrecords */ = {
 			isa = PBXGroup;
 			children = (
+				6AD87E241C0D328600204966 /* SwiftyJSON.swift */,
 				6A86949F1C0CCD900043EB33 /* config */,
 				6A53BCD31C0BF30F0000FE2C /* Resources */,
-				6A53BCAA1C0BD4520000FE2C /* AppDelegate.swift */,
 				6A53BCAE1C0BD4520000FE2C /* Main.storyboard */,
 				6A53BCD11C0BD99D0000FE2C /* TopAlbumViewController.swift */,
 				6A53BCCD1C0BD8970000FE2C /* SearchArtistViewController.swift */,
 				6A53BCB41C0BD4520000FE2C /* Assets.xcassets */,
+				6AD87E221C0D327300204966 /* AppDelegate.swift */,
 				6A53BCB61C0BD4520000FE2C /* LaunchScreen.storyboard */,
 				6A53BCB91C0BD4520000FE2C /* Info.plist */,
 				6A53BCB11C0BD4520000FE2C /* lovedrecords.xcdatamodeld */,
@@ -241,8 +244,9 @@
 				6A53BCB31C0BD4520000FE2C /* lovedrecords.xcdatamodeld in Sources */,
 				6A53BCD21C0BD99D0000FE2C /* TopAlbumViewController.swift in Sources */,
 				6A53BCAD1C0BD4520000FE2C /* ViewController.swift in Sources */,
+				6AD87E251C0D328600204966 /* SwiftyJSON.swift in Sources */,
+				6AD87E231C0D327300204966 /* AppDelegate.swift in Sources */,
 				6A53BCCE1C0BD8970000FE2C /* SearchArtistViewController.swift in Sources */,
-				6A53BCAB1C0BD4520000FE2C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
