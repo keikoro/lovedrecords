@@ -29,9 +29,11 @@ class TopAlbumViewController: UIViewController {
         albumCover.layer.cornerRadius = 15
         
         let lastfmUrl = buildUrl(submittedValue)
+        
         print("Last.fm API request URL:") // debug
         print(lastfmUrl) // debug
-        
+        parseJson()
+  
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,6 +41,36 @@ class TopAlbumViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func parseJson() {
+        let session = NSURLSession.sharedSession()
+        let url = NSURL(string: lastfmUrl)
+        
+        
+        let task = session.dataTaskWithURL(url!, completionHandler: {(data, reponse, error) in
+            
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+            
+            do {
+                if let jsonResult = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary {
+                    
+                    // evaluate JSON with SwiftyJSON
+                    let json = JSON(jsonResult)
+
+                    print(json) // debug
+                    
+                }
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+            
+        })
+        
+        task.resume()
+    }
+    
+    
     // build URL for last.fm request
     func buildUrl(searchTerm: String) -> String {
         
