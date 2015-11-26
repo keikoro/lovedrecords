@@ -58,7 +58,21 @@ class TopAlbumViewController: UIViewController {
                     // evaluate JSON with SwiftyJSON
                     let json = JSON(jsonResult)
 
-                    print(json) // debug
+                    let artistNameResult = json["topalbums"]["@attr"]["artist"].string
+                    let albumNameResult = json["topalbums"]["album"][0]["name"].string
+                    let playCountResult = json["topalbums"]["album"][0]["playcount"].number
+                    // 'large' album cover, 174px
+                    let albumCoverImageUrl = json["topalbums"]["album"][0]["image"][2]["#text"].string
+                    
+                    // debug
+                    print("")
+                    print(artistNameResult!)
+                    print(albumNameResult!)
+                    print(playCountResult!)
+                    print(albumCoverImageUrl!)
+                    
+                    // don't change UI in main thread!
+                    // self.artistName.text = artistNameResult
                     
                 }
             } catch let error as NSError {
