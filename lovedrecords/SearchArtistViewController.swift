@@ -34,6 +34,7 @@ class SearchArtistViewController: UIViewController, UITextFieldDelegate {
     
     // activate segue only if artist search field is not empty
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        print("-----") // debug
         
         if identifier == "showAlbumSegue" {
             
