@@ -14,7 +14,7 @@ class SearchArtistViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var introText: UILabel!
     @IBOutlet weak var artistSearchField: UITextField!
     @IBOutlet weak var startSearchButton: UIButton!
-    @IBOutlet weak var poweredBy: UILabel!
+    @IBOutlet weak var poweredBy: UIButton!
     
     let artistValue: String = ""
     
@@ -22,8 +22,7 @@ class SearchArtistViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         // round corners for powered by label
-        poweredBy.clipsToBounds = true
-        poweredBy.layer.cornerRadius = 3
+        poweredBy.layer.cornerRadius = 4
     }
     
     override func didReceiveMemoryWarning() {
@@ -36,6 +35,12 @@ class SearchArtistViewController: UIViewController, UITextFieldDelegate {
         if (segue.identifier == "segueToAlbum") {
             let seg = segue.destinationViewController as! TopAlbumViewController
             seg.submittedValue = self.artistSearchField.text!
+        }
+    }
+    
+    @IBAction func goToLastfm(sender: AnyObject) {
+        if let url = NSURL(string: "https://last.fm") {
+            UIApplication.sharedApplication().openURL(url)
         }
     }
     

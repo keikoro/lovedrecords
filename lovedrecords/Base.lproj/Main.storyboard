@@ -54,30 +54,30 @@
                                 <color key="textColor" red="0.85882352939999995" green="0.17254901959999999" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="powered by last.fm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eE7-6V-R19">
-                                <rect key="frame" x="460" y="550" width="120" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rzg-bJ-uMf">
+                                <rect key="frame" x="458" y="550" width="122" height="30"/>
                                 <color key="backgroundColor" red="0.85882352939999995" green="0.17254901959999999" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" link="YES" staticText="YES"/>
-                                </accessibility>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="110" id="Apf-Cx-hy0"/>
-                                    <constraint firstAttribute="height" constant="20" id="ihR-51-z6d"/>
+                                    <constraint firstAttribute="height" constant="20" id="9gk-sI-VbK"/>
+                                    <constraint firstAttribute="width" constant="110" id="QIg-RQ-kuq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="powered by last.fm">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToLastfm:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ocE-3d-CWv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="0Qr-pI-Tll" secondAttribute="leading" id="4Tb-Du-u2t"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="eE7-6V-R19" secondAttribute="trailing" id="Fl9-dE-nzA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rzg-bJ-uMf" secondAttribute="trailing" id="FsX-dU-Wa4"/>
                             <constraint firstItem="0Qr-pI-Tll" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="GI9-WM-TbD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rRT-ZT-vtB" secondAttribute="trailing" id="KY7-QO-3fM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CHT-zc-DaV" secondAttribute="trailing" constant="40" id="KdE-uy-4fb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rRT-ZT-vtB" secondAttribute="trailing" id="PyE-gl-onJ"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eE7-6V-R19" secondAttribute="bottom" constant="20" id="SOf-UX-wbk"/>
                             <constraint firstItem="CHT-zc-DaV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="TXP-6x-ohQ"/>
                             <constraint firstItem="rRT-ZT-vtB" firstAttribute="top" secondItem="CHT-zc-DaV" secondAttribute="bottom" constant="14" id="Tu3-Mn-d45"/>
                             <constraint firstItem="CHT-zc-DaV" firstAttribute="top" secondItem="0Qr-pI-Tll" secondAttribute="bottom" constant="2" id="Y4E-DY-yai"/>
@@ -86,6 +86,8 @@
                             <constraint firstItem="0Qr-pI-Tll" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="f28-el-FTX"/>
                             <constraint firstAttribute="leadingMargin" secondItem="CHT-zc-DaV" secondAttribute="leading" id="hDL-8Z-6IQ"/>
                             <constraint firstItem="cph-LK-m9W" firstAttribute="top" secondItem="CHT-zc-DaV" secondAttribute="bottom" constant="14" id="qFa-n9-W5w"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rzg-bJ-uMf" secondAttribute="bottom" constant="20" id="r8E-Ua-niW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rzg-bJ-uMf" secondAttribute="trailing" id="rXQ-Iz-FsI"/>
                             <constraint firstItem="rRT-ZT-vtB" firstAttribute="leading" relation="lessThanOrEqual" secondItem="cph-LK-m9W" secondAttribute="trailing" constant="42" id="w6P-Wg-Fjg"/>
                         </constraints>
                         <variation key="default">
@@ -100,7 +102,7 @@
                     <connections>
                         <outlet property="artistSearchField" destination="cph-LK-m9W" id="f48-Qa-xhC"/>
                         <outlet property="introText" destination="CHT-zc-DaV" id="yUb-4b-Ms9"/>
-                        <outlet property="poweredBy" destination="eE7-6V-R19" id="5ru-N7-JhT"/>
+                        <outlet property="poweredBy" destination="rzg-bJ-uMf" id="Dwv-ZA-coG"/>
                         <outlet property="startSearchButton" destination="rRT-ZT-vtB" id="kr0-pG-uWM"/>
                         <segue destination="EYD-n8-6QH" kind="show" identifier="segueToAlbum" id="qjz-Bo-BBg"/>
                     </connections>
