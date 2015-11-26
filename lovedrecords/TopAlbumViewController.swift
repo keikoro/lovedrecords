@@ -58,17 +58,33 @@ class TopAlbumViewController: UIViewController {
                 
                 do {
                     // get all the JSON in the form of a dictionary
-                    if let jsonResult = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary {
-                        
-                        // evaluate JSON with SwiftyJSON
-                        let json = JSON(jsonResult)
+                    let jsonResult = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary
 
+                    // check for last.fm errors
+                    if let _ = jsonResult!["error"] {
+                        print("The input provided is not a valid artist.")
+
+                        // stop here and
+                        // TODO:
+                        // show user a pop-up message
+                        
+                    // if everything is fine, start parsing the JSON properly
+                    } else {
+                    
+                        // evaluate JSON with SwiftyJSON
+                        let json = JSON(jsonResult!)
+                        
+                        // TODO:
+                        // check for empty results
+                        // cf. artist "youthmovie soundtrack"
+                        // (instead of "youthmovie soundtrack strategies"
+                        
                         let artistNameResult = json["topalbums"]["@attr"]["artist"].string
                         let albumNameResult = json["topalbums"]["album"][0]["name"].string
                         let playCountResult = json["topalbums"]["album"][0]["playcount"].number
                         // 'large' album cover, 174px
                         let albumCoverImageUrl = json["topalbums"]["album"][0]["image"][2]["#text"].string
-                        
+                    
                         // debug
                         print("Aaaaall the JSON:")
                         print("Artist: \(artistNameResult!)")
@@ -85,6 +101,7 @@ class TopAlbumViewController: UIViewController {
                         
                         // start function for album cover download
                         self.downloadImage(albumCoverImageUrl!)
+
                     }
                 } catch {
                     print("There was an error getting the JSON.")
@@ -97,6 +114,7 @@ class TopAlbumViewController: UIViewController {
     // download images
     func downloadImage(albumCoverImageUrl: String) {
         
+        // TODO
     }
     
     
