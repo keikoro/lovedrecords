@@ -51,12 +51,12 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lo&lt;3dRecords" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Qr-pI-Tll">
                                 <rect key="frame" x="20" y="72" width="107" height="20"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <color key="textColor" red="0.85882352939999995" green="0.17254901959999999" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.83529411760000005" green="0.062745098040000002" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rzg-bJ-uMf">
                                 <rect key="frame" x="470" y="560" width="110" height="20"/>
-                                <color key="backgroundColor" red="0.85882352939999995" green="0.17254901959999999" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.83529411764705885" green="0.062745098039215685" blue="0.027450980392156862" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="9gk-sI-VbK"/>
                                     <constraint firstAttribute="width" constant="110" id="QIg-RQ-kuq"/>
