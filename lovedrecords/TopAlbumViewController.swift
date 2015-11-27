@@ -49,8 +49,8 @@ class TopAlbumViewController: UIViewController {
 
             // session for web request
             let session = NSURLSession.sharedSession()
-            let url = NSURL(string: lastfmUrl)!
-            let task = session.dataTaskWithURL(url, completionHandler: {(data, reponse, error) in
+            let url = NSURL(string: lastfmUrl)
+            let task = session.dataTaskWithURL(url!, completionHandler: {(data, reponse, error) in
                 if error != nil {
                     print("Couldn't make the web request.")
                     print(error!.localizedDescription)
@@ -64,10 +64,16 @@ class TopAlbumViewController: UIViewController {
                     if let _ = jsonResult!["error"] {
                         print("The input provided is not a valid artist.")
 
-                        // stop here and
-                        // TODO:
-                        // show user a pop-up message
-                        
+                        // let the user know they need to provide a VALID artist name
+                        // UI -> needs to happen in main...
+                        dispatch_async(dispatch_get_main_queue(), {
+                            let alert = UIAlertView()
+                            alert.title = "Artist doesn't exist"
+                            alert.message = "The artist you were looking for is not known to last.fm, sorry!"
+                            alert.addButtonWithTitle("OK")
+                            alert.show()
+                        })
+   
                     // if everything is fine, start parsing the JSON properly
                     } else {
                     
