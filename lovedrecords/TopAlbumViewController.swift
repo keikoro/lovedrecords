@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Foundation
 
 class TopAlbumViewController: UIViewController {
 
@@ -108,7 +107,7 @@ class TopAlbumViewController: UIViewController {
                             dispatch_async(dispatch_get_main_queue(), {
                                 self.artistName.text = artistNameResult
                                 self.albumName.text = albumNameResult
-                                self.playCount.text = String(playCountResult!)
+                                self.playCount.text = String(playCountResult!.addSeparator)
                             })
                             
                             // start function for album cover download
@@ -185,5 +184,15 @@ class TopAlbumViewController: UIViewController {
         }
         
         return lastfmUrl
+    }
+}
+
+// add number separator for nicer display of playcount
+extension NSNumber {
+    var addSeparator: String {
+        let ns = NSNumberFormatter()
+        ns.groupingSeparator = " "
+        ns.numberStyle = NSNumberFormatterStyle.DecimalStyle
+        return ns.stringFromNumber(self)!
     }
 }
