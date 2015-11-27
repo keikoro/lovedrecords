@@ -100,7 +100,11 @@ class TopAlbumViewController: UIViewController {
                         })
                         
                         // start function for album cover download
-                        self.downloadImage(albumCoverImageUrl!)
+                        // only do this if albumCoverImageUrl is not empty!!
+                        
+                        if (albumCoverImageUrl != "") {
+                            self.downloadImage(albumCoverImageUrl!)
+                        }
 
                     }
                 } catch {
@@ -113,10 +117,19 @@ class TopAlbumViewController: UIViewController {
     
     // download images
     func downloadImage(albumCoverImageUrl: String) {
-        
-        // TODO
+
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            let imgUrl:String = albumCoverImageUrl
+            let url:NSURL = NSURL(string: imgUrl)!
+            
+            // check if image exists
+            if let data:NSData = NSData(contentsOfURL: url)! {
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.albumCover.image = UIImage(data: data)
+                }
+            }
+        })
     }
-    
     
     // build URL for last.fm request
     func buildUrl(searchTerm: String) -> String {
