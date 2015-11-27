@@ -15,6 +15,10 @@
 		6A53BCCE1C0BD8970000FE2C /* SearchArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A53BCCD1C0BD8970000FE2C /* SearchArtistViewController.swift */; };
 		6A53BCD21C0BD99D0000FE2C /* TopAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A53BCD11C0BD99D0000FE2C /* TopAlbumViewController.swift */; };
 		6A53BCD81C0BFF1B0000FE2C /* lovedrecords.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A53BCD71C0BFF1B0000FE2C /* lovedrecords.png */; };
+		6A6D606A1C0FBDBF00F81BA6 /* lovedrecords_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A6D60691C0FBDBF00F81BA6 /* lovedrecords_logo.png */; };
+		6A6D606D1C0FBFD000F81BA6 /* lovedrecords_logo_80.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A6D606B1C0FBFD000F81BA6 /* lovedrecords_logo_80.png */; };
+		6A6D606E1C0FBFD000F81BA6 /* lovedrecords_logo_120.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A6D606C1C0FBFD000F81BA6 /* lovedrecords_logo_120.png */; };
+		6A6D60701C0FC03300F81BA6 /* lovedrecords_logo_180.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A6D606F1C0FC03300F81BA6 /* lovedrecords_logo_180.png */; };
 		6AD87E231C0D327300204966 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD87E221C0D327300204966 /* AppDelegate.swift */; };
 		6AD87E251C0D328600204966 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD87E241C0D328600204966 /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +46,10 @@
 		6A53BCCD1C0BD8970000FE2C /* SearchArtistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchArtistViewController.swift; sourceTree = "<group>"; };
 		6A53BCD11C0BD99D0000FE2C /* TopAlbumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopAlbumViewController.swift; sourceTree = "<group>"; };
 		6A53BCD71C0BFF1B0000FE2C /* lovedrecords.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lovedrecords.png; path = Assets.xcassets/Images/lovedrecords.png; sourceTree = "<group>"; };
+		6A6D60691C0FBDBF00F81BA6 /* lovedrecords_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lovedrecords_logo.png; path = Assets.xcassets/Images/lovedrecords_logo.png; sourceTree = "<group>"; };
+		6A6D606B1C0FBFD000F81BA6 /* lovedrecords_logo_80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lovedrecords_logo_80.png; path = Assets.xcassets/Images/lovedrecords_logo_80.png; sourceTree = "<group>"; };
+		6A6D606C1C0FBFD000F81BA6 /* lovedrecords_logo_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lovedrecords_logo_120.png; path = Assets.xcassets/Images/lovedrecords_logo_120.png; sourceTree = "<group>"; };
+		6A6D606F1C0FC03300F81BA6 /* lovedrecords_logo_180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lovedrecords_logo_180.png; path = Assets.xcassets/Images/lovedrecords_logo_180.png; sourceTree = "<group>"; };
 		6A8694A01C0CCDED0043EB33 /* lovedrecords.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = lovedrecords.xcconfig; sourceTree = "<group>"; };
 		6AD87E221C0D327300204966 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AD87E241C0D328600204966 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
@@ -121,6 +129,10 @@
 		6A53BCD41C0BF31C0000FE2C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				6A6D606F1C0FC03300F81BA6 /* lovedrecords_logo_180.png */,
+				6A6D606B1C0FBFD000F81BA6 /* lovedrecords_logo_80.png */,
+				6A6D606C1C0FBFD000F81BA6 /* lovedrecords_logo_120.png */,
+				6A6D60691C0FBDBF00F81BA6 /* lovedrecords_logo.png */,
 				6A53BCD71C0BFF1B0000FE2C /* lovedrecords.png */,
 			);
 			name = Images;
@@ -217,9 +229,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A6D60701C0FC03300F81BA6 /* lovedrecords_logo_180.png in Resources */,
+				6A6D606E1C0FBFD000F81BA6 /* lovedrecords_logo_120.png in Resources */,
 				6A53BCB81C0BD4520000FE2C /* LaunchScreen.storyboard in Resources */,
 				6A53BCB51C0BD4520000FE2C /* Assets.xcassets in Resources */,
+				6A6D606D1C0FBFD000F81BA6 /* lovedrecords_logo_80.png in Resources */,
 				6A53BCB01C0BD4520000FE2C /* Main.storyboard in Resources */,
+				6A6D606A1C0FBDBF00F81BA6 /* lovedrecords_logo.png in Resources */,
 				6A53BCD81C0BFF1B0000FE2C /* lovedrecords.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
