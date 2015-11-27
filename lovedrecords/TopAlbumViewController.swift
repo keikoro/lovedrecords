@@ -18,8 +18,6 @@ class TopAlbumViewController: UIViewController {
     @IBOutlet weak var playCount: UILabel!
     
     var submittedValue: String = ""
-    var lastfmUrl: String = ""
-    var lastfmKey: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +26,13 @@ class TopAlbumViewController: UIViewController {
         albumCover.clipsToBounds = true
         albumCover.layer.cornerRadius = 15
         
+        // build the URL
         let lastfmUrl = buildUrl(submittedValue)
-        
+        print("-----") // debug        
         print("Last.fm API request URL:") // debug
-        print(lastfmUrl) // debug
-        parseJson()
-  
+        print("\(lastfmUrl)") // debug
+        
+        parseJson(lastfmUrl)
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,47 +40,63 @@ class TopAlbumViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func parseJson() {
-        let session = NSURLSession.sharedSession()
-        let url = NSURL(string: lastfmUrl)
+    // request JSON from last.fm URL – done outside the main thread
+    func parseJson(lastfmUrl: String) {
+        print("-----") // debug
         
-        
-        let task = session.dataTaskWithURL(url!, completionHandler: {(data, reponse, error) in
-            
-            if error != nil {
-                print(error!.localizedDescription)
-            }
-            
-            do {
-                if let jsonResult = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary {
-                    
-                    // evaluate JSON with SwiftyJSON
-                    let json = JSON(jsonResult)
+        // parse JSON outside the main thread
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
 
-                    let artistNameResult = json["topalbums"]["@attr"]["artist"].string
-                    let albumNameResult = json["topalbums"]["album"][0]["name"].string
-                    let playCountResult = json["topalbums"]["album"][0]["playcount"].number
-                    // 'large' album cover, 174px
-                    let albumCoverImageUrl = json["topalbums"]["album"][0]["image"][2]["#text"].string
-                    
-                    // debug
-                    print("")
-                    print(artistNameResult!)
-                    print(albumNameResult!)
-                    print(playCountResult!)
-                    print(albumCoverImageUrl!)
-                    
-                    // don't change UI in main thread!
-                    // self.artistName.text = artistNameResult
-                    
+            // session for web request
+            let session = NSURLSession.sharedSession()
+            let url = NSURL(string: lastfmUrl)!
+            let task = session.dataTaskWithURL(url, completionHandler: {(data, reponse, error) in
+                if error != nil {
+                    print("Couldn't make the web request.")
+                    print(error!.localizedDescription)
                 }
-            } catch let error as NSError {
-                print(error.localizedDescription)
-            }
-            
+                
+                do {
+                    // get all the JSON in the form of a dictionary
+                    if let jsonResult = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary {
+                        
+                        // evaluate JSON with SwiftyJSON
+                        let json = JSON(jsonResult)
+
+                        let artistNameResult = json["topalbums"]["@attr"]["artist"].string
+                        let albumNameResult = json["topalbums"]["album"][0]["name"].string
+                        let playCountResult = json["topalbums"]["album"][0]["playcount"].number
+                        // 'large' album cover, 174px
+                        let albumCoverImageUrl = json["topalbums"]["album"][0]["image"][2]["#text"].string
+                        
+                        // debug
+                        print("Aaaaall the JSON:")
+                        print("Artist: \(artistNameResult!)")
+                        print("Album: \(albumNameResult!)")
+                        print("Play count: \(playCountResult!)")
+                        print("URL to image: \(albumCoverImageUrl!)\n")
+                        
+                        // update UI in main thread
+                        dispatch_async(dispatch_get_main_queue(), {
+                            self.artistName.text = artistNameResult
+                            self.albumName.text = albumNameResult
+                            self.playCount.text = String(playCountResult!)
+                        })
+                        
+                        // start function for album cover download
+                        self.downloadImage(albumCoverImageUrl!)
+                    }
+                } catch {
+                    print("There was an error getting the JSON.")
+                }
+            })
+            task.resume()
         })
+    }
+    
+    // download images
+    func downloadImage(albumCoverImageUrl: String) {
         
-        task.resume()
     }
     
     
@@ -90,15 +105,18 @@ class TopAlbumViewController: UIViewController {
         
         // URL format to get last.fm top album for given artist:
         // http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=Artist+Name&limit=1&autocorrect=1&api_key=KEY&format=json
-        
-        lastfmKey = (NSBundle.mainBundle().infoDictionary?["Last.fm API Key"])! as! String
+
+        var lastfmUrl: String = ""
+
+        let lastfmKey = (NSBundle.mainBundle().infoDictionary?["Last.fm API Key"])! as! String
+        print("-----") // debug
         print("Last.fm API Key:") // debug
-        print("\(lastfmKey)\n") // debug
+        print("\(lastfmKey)") // debug
             
         // placeholder artist
         let artistInput = searchTerm
         print("Requested artist:") // debug
-        print("\(artistInput)\n") // debug
+        print("\(artistInput)") // debug
 
         // replace all spaces in artist name with '+' signs
         let artist = artistInput.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.LiteralSearch, range: nil)
@@ -113,6 +131,10 @@ class TopAlbumViewController: UIViewController {
                 "&api_key=\(lastfmKey)" +
                 "&format=json"
         }
+        
+        // TODO:
+        // check URL encoding
+        
         return lastfmUrl
     }
 }
