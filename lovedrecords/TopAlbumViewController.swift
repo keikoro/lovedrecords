@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class TopAlbumViewController: UIViewController {
 
@@ -39,6 +40,18 @@ class TopAlbumViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // show an alert pop-up
+    // always do this on main
+    func alertArtistDoesntExist() {
+        dispatch_async(dispatch_get_main_queue(), {
+            let alert = UIAlertView()
+            alert.title = "Artist doesn't exist"
+            alert.message = "The artist you were looking for is not known to last.fm, sorry!"
+            alert.addButtonWithTitle("OK")
+            alert.show()
+        })
+    }
 
     // request JSON from last.fm URL – done outside the main thread
     func parseJson(lastfmUrl: String) {
@@ -65,50 +78,47 @@ class TopAlbumViewController: UIViewController {
                         print("The input provided is not a valid artist.")
 
                         // let the user know they need to provide a VALID artist name
-                        // UI -> needs to happen in main!
-                        dispatch_async(dispatch_get_main_queue(), {
-                            let alert = UIAlertView()
-                            alert.title = "Artist doesn't exist"
-                            alert.message = "The artist you were looking for is not known to last.fm, sorry!"
-                            alert.addButtonWithTitle("OK")
-                            alert.show()
-                        })
+                        self.alertArtistDoesntExist()
    
                     // if everything is fine, start parsing the JSON properly
                     } else {
                     
                         // evaluate JSON with SwiftyJSON
                         let json = JSON(jsonResult!)
-                        
-                        // TODO:
-                        // check for empty results
+
+                        let artistNameResult = json["topalbums"]["@attr"]["artist"].string
+                    
+                        // check for empty results for non–'@attr' values
                         // cf. artist "youthmovie soundtrack"
                         // (instead of "youthmovie soundtrack strategies"
-                        
-                        let artistNameResult = json["topalbums"]["@attr"]["artist"].string
-                        let albumNameResult = json["topalbums"]["album"][0]["name"].string
-                        let playCountResult = json["topalbums"]["album"][0]["playcount"].number
-                        // 'large' album cover, 174px
-                        let albumCoverImageUrl = json["topalbums"]["album"][0]["image"][2]["#text"].string
-                    
-                        // debug
-                        print("Aaaaall the JSON:")
-                        print("Artist: \(artistNameResult!)")
-                        print("Album: \(albumNameResult!)")
-                        print("Play count: \(playCountResult!)")
-                        print("URL to image: \(albumCoverImageUrl!)\n")
-                        
-                        // update UI in main thread
-                        dispatch_async(dispatch_get_main_queue(), {
-                            self.artistName.text = artistNameResult
-                            self.albumName.text = albumNameResult
-                            self.playCount.text = String(playCountResult!)
-                        })
-                        
-                        // start function for album cover download
-                        // – only do this if albumCoverImageUrl is not empty!!
-                        if (albumCoverImageUrl != "") {
-                            self.downloadImage(albumCoverImageUrl!)
+                        if let albumNameResult = json["topalbums"]["album"][0]["name"].string {
+                            
+                            let playCountResult = json["topalbums"]["album"][0]["playcount"].number
+                            // 'large' album cover, 174px
+                            let albumCoverImageUrl = json["topalbums"]["album"][0]["image"][2]["#text"].string
+                            
+                            // debug
+                            print("Aaaaall the JSON:")
+                            print("Artist: \(artistNameResult!)")
+                            print("Album: \(albumNameResult)")
+                            print("Play count: \(playCountResult!)")
+                            print("URL to image: \(albumCoverImageUrl!)\n")
+                            
+                            // update UI in main thread
+                            dispatch_async(dispatch_get_main_queue(), {
+                                self.artistName.text = artistNameResult
+                                self.albumName.text = albumNameResult
+                                self.playCount.text = String(playCountResult!)
+                            })
+                            
+                            // start function for album cover download
+                            // – only do this if albumCoverImageUrl is not empty!!
+                            if (albumCoverImageUrl != "") {
+                                self.downloadImage(albumCoverImageUrl!)
+                            }
+                            
+                        } else {
+                            self.alertArtistDoesntExist()
                         }
 
                     }
