@@ -65,7 +65,7 @@ class TopAlbumViewController: UIViewController {
                         print("The input provided is not a valid artist.")
 
                         // let the user know they need to provide a VALID artist name
-                        // UI -> needs to happen in main...
+                        // UI -> needs to happen in main!
                         dispatch_async(dispatch_get_main_queue(), {
                             let alert = UIAlertView()
                             alert.title = "Artist doesn't exist"
@@ -106,8 +106,7 @@ class TopAlbumViewController: UIViewController {
                         })
                         
                         // start function for album cover download
-                        // only do this if albumCoverImageUrl is not empty!!
-                        
+                        // – only do this if albumCoverImageUrl is not empty!!
                         if (albumCoverImageUrl != "") {
                             self.downloadImage(albumCoverImageUrl!)
                         }
@@ -144,6 +143,7 @@ class TopAlbumViewController: UIViewController {
         // http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=Artist+Name&limit=1&autocorrect=1&api_key=KEY&format=json
 
         var lastfmUrl: String = ""
+        
 
         let lastfmKey = (NSBundle.mainBundle().infoDictionary?["Last.fm API Key"])! as! String
         print("-----") // debug
@@ -152,25 +152,27 @@ class TopAlbumViewController: UIViewController {
             
         // placeholder artist
         let artistInput = searchTerm
+        
         print("Requested artist:") // debug
         print("\(artistInput)") // debug
 
         // replace all spaces in artist name with '+' signs
-        let artist = artistInput.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        let artistConcatenate = artistInput.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        
+        // percent encoding to escape umlauts, accents, etc.
+        // -> makes Télépopmusik, Björk, Trentemøller,... work
+        let artistUtf8 = artistConcatenate.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
         
         // load last.fm key variable from Info.plist
         if (lastfmKey != "") {
             // build url
             lastfmUrl = "https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&" +
-                "artist=\(artist)" +
+                "artist=\(artistUtf8)" +
                 "&limit=1" +
                 "&autocorrect=1" +
                 "&api_key=\(lastfmKey)" +
                 "&format=json"
         }
-        
-        // TODO:
-        // check URL encoding
         
         return lastfmUrl
     }
