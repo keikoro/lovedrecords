@@ -36,8 +36,8 @@
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="spatial" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRT-ZT-vtB">
-                                <rect key="frame" x="282" y="125" width="298" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRT-ZT-vtB">
+                                <rect key="frame" x="250" y="125" width="330" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="tintColor" red="0.85882352939999995" green="0.17254901959999999" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
@@ -88,7 +88,7 @@
                             <constraint firstItem="cph-LK-m9W" firstAttribute="top" secondItem="CHT-zc-DaV" secondAttribute="bottom" constant="14" id="qFa-n9-W5w"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rzg-bJ-uMf" secondAttribute="bottom" constant="20" id="r8E-Ua-niW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rzg-bJ-uMf" secondAttribute="trailing" id="rXQ-Iz-FsI"/>
-                            <constraint firstItem="rRT-ZT-vtB" firstAttribute="leading" relation="lessThanOrEqual" secondItem="cph-LK-m9W" secondAttribute="trailing" constant="42" id="w6P-Wg-Fjg"/>
+                            <constraint firstItem="rRT-ZT-vtB" firstAttribute="leading" relation="lessThanOrEqual" secondItem="cph-LK-m9W" secondAttribute="trailing" constant="10" id="w6P-Wg-Fjg"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -166,11 +166,11 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61A-My-Jdl">
-                                <rect key="frame" x="540" y="534" width="40" height="48"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61A-My-Jdl">
+                                <rect key="frame" x="530" y="582" width="50" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="H41-Dt-zXH"/>
-                                    <constraint firstAttribute="width" constant="40" id="RB8-Iv-Gav"/>
+                                    <constraint firstAttribute="width" constant="50" id="RB8-Iv-Gav"/>
                                     <constraint firstAttribute="width" constant="160" id="l30-Z4-PGv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -184,7 +184,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Playcount" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oyp-Z6-ZQp">
-                                <rect key="frame" x="532" y="522" width="48" height="12"/>
+                                <rect key="frame" x="532" y="570" width="48" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
