@@ -11,7 +11,6 @@
 		6A53BCB31C0BD4520000FE2C /* lovedrecords.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6A53BCB11C0BD4520000FE2C /* lovedrecords.xcdatamodeld */; };
 		6A53BCB51C0BD4520000FE2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A53BCB41C0BD4520000FE2C /* Assets.xcassets */; };
 		6A53BCB81C0BD4520000FE2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A53BCB61C0BD4520000FE2C /* LaunchScreen.storyboard */; };
-		6A53BCC31C0BD4520000FE2C /* lovedrecordsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A53BCC21C0BD4520000FE2C /* lovedrecordsTests.swift */; };
 		6A53BCCE1C0BD8970000FE2C /* SearchArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A53BCCD1C0BD8970000FE2C /* SearchArtistViewController.swift */; };
 		6A53BCD21C0BD99D0000FE2C /* TopAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A53BCD11C0BD99D0000FE2C /* TopAlbumViewController.swift */; };
 		6A53BCD81C0BFF1B0000FE2C /* lovedrecords.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A53BCD71C0BFF1B0000FE2C /* lovedrecords.png */; };
@@ -23,16 +22,6 @@
 		6AD87E251C0D328600204966 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD87E241C0D328600204966 /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		6A53BCBF1C0BD4520000FE2C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6A53BC9F1C0BD4520000FE2C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6A53BCA61C0BD4520000FE2C;
-			remoteInfo = lovedrecords;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		6A53BCA71C0BD4520000FE2C /* lovedrecords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lovedrecords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A53BCAF1C0BD4520000FE2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,7 +29,6 @@
 		6A53BCB41C0BD4520000FE2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A53BCB71C0BD4520000FE2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A53BCB91C0BD4520000FE2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6A53BCBE1C0BD4520000FE2C /* lovedrecordsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lovedrecordsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A53BCC21C0BD4520000FE2C /* lovedrecordsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lovedrecordsTests.swift; sourceTree = "<group>"; };
 		6A53BCC41C0BD4520000FE2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A53BCCD1C0BD8970000FE2C /* SearchArtistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchArtistViewController.swift; sourceTree = "<group>"; };
@@ -63,13 +51,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6A53BCBB1C0BD4520000FE2C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -86,7 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				6A53BCA71C0BD4520000FE2C /* lovedrecords.app */,
-				6A53BCBE1C0BD4520000FE2C /* lovedrecordsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -166,24 +146,6 @@
 			productReference = 6A53BCA71C0BD4520000FE2C /* lovedrecords.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6A53BCBD1C0BD4520000FE2C /* lovedrecordsTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6A53BCCA1C0BD4520000FE2C /* Build configuration list for PBXNativeTarget "lovedrecordsTests" */;
-			buildPhases = (
-				6A53BCBA1C0BD4520000FE2C /* Sources */,
-				6A53BCBB1C0BD4520000FE2C /* Frameworks */,
-				6A53BCBC1C0BD4520000FE2C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6A53BCC01C0BD4520000FE2C /* PBXTargetDependency */,
-			);
-			name = lovedrecordsTests;
-			productName = lovedrecordsTests;
-			productReference = 6A53BCBE1C0BD4520000FE2C /* lovedrecordsTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -197,11 +159,6 @@
 					6A53BCA61C0BD4520000FE2C = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = W2DVFG5M4C;
-					};
-					6A53BCBD1C0BD4520000FE2C = {
-						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = W2DVFG5M4C;
-						TestTargetID = 6A53BCA61C0BD4520000FE2C;
 					};
 				};
 			};
@@ -219,7 +176,6 @@
 			projectRoot = "";
 			targets = (
 				6A53BCA61C0BD4520000FE2C /* lovedrecords */,
-				6A53BCBD1C0BD4520000FE2C /* lovedrecordsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -240,13 +196,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6A53BCBC1C0BD4520000FE2C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -262,23 +211,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6A53BCBA1C0BD4520000FE2C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6A53BCC31C0BD4520000FE2C /* lovedrecordsTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		6A53BCC01C0BD4520000FE2C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6A53BCA61C0BD4520000FE2C /* lovedrecords */;
-			targetProxy = 6A53BCBF1C0BD4520000FE2C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6A53BCAE1C0BD4520000FE2C /* Main.storyboard */ = {
@@ -411,30 +344,6 @@
 			};
 			name = Release;
 		};
-		6A53BCCB1C0BD4520000FE2C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = lovedrecordsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = at.kk.lovedrecordsTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lovedrecords.app/lovedrecords";
-			};
-			name = Debug;
-		};
-		6A53BCCC1C0BD4520000FE2C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = lovedrecordsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = at.kk.lovedrecordsTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lovedrecords.app/lovedrecords";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -452,15 +361,6 @@
 			buildConfigurations = (
 				6A53BCC81C0BD4520000FE2C /* Debug */,
 				6A53BCC91C0BD4520000FE2C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6A53BCCA1C0BD4520000FE2C /* Build configuration list for PBXNativeTarget "lovedrecordsTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6A53BCCB1C0BD4520000FE2C /* Debug */,
-				6A53BCCC1C0BD4520000FE2C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
