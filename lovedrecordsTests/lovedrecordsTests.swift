@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import lovedrecords
 
 class lovedrecordsTests: XCTestCase {
     
