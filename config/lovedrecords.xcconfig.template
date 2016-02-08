@@ -1,0 +1,10 @@
+//
+//  lovedrecords.xcconfig
+//  lovedrecords
+//
+//  Copyright (c) 2015 K Kollmann.
+//  All rights reserved.
+//
+
+// last.fm API key
+LASTFM_API_KEY =
