@@ -576,6 +576,7 @@
 				6A9F07531C10381C002D2DF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6A9F075F1C103823002D2DF3 /* Build configuration list for PBXNativeTarget "lovedrecordsTests" */ = {
 			isa = XCConfigurationList;
@@ -584,6 +585,7 @@
 				6A9F07611C103823002D2DF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
