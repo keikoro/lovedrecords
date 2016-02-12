@@ -15,11 +15,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter artist name..." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cph-LK-m9W">
-                                <rect key="frame" x="20" y="125" width="220" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter artist name..." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cph-LK-m9W">
+                                <rect key="frame" x="16" y="125" width="220" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="GRL-ll-Vel"/>
                                 </constraints>
@@ -30,14 +30,14 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="t9o-vY-3nV"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find out which album by your favourite artist fans love the most!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHT-zc-DaV">
-                                <rect key="frame" x="20" y="94" width="520" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Find out which album by your favourite artist fans love the most!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHT-zc-DaV">
+                                <rect key="frame" x="16" y="94" width="228" height="17"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRT-ZT-vtB">
-                                <rect key="frame" x="250" y="125" width="330" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRT-ZT-vtB">
+                                <rect key="frame" x="235" y="125" width="49" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="tintColor" red="0.85882352939999995" green="0.17254901959999999" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
@@ -49,13 +49,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lo&lt;3dRecords" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Qr-pI-Tll">
-                                <rect key="frame" x="20" y="72" width="107" height="20"/>
+                                <rect key="frame" x="16" y="72" width="107" height="20"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" red="0.83529411760000005" green="0.062745098040000002" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rzg-bJ-uMf">
-                                <rect key="frame" x="470" y="560" width="110" height="20"/>
+                                <rect key="frame" x="174" y="560" width="110" height="20"/>
                                 <color key="backgroundColor" red="0.83529411764705885" green="0.062745098039215685" blue="0.027450980392156862" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="9gk-sI-VbK"/>
@@ -99,6 +99,8 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="CoZ-CJ-kLA"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="600"/>
                     <connections>
                         <outlet property="artistSearchField" destination="cph-LK-m9W" id="f48-Qa-xhC"/>
                         <outlet property="introText" destination="CHT-zc-DaV" id="yUb-4b-Ms9"/>
@@ -119,11 +121,11 @@
                         <viewControllerLayoutGuide type="bottom" id="CSb-A6-jJ7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3bo-TL-1Xp">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjW-0V-UST">
-                                <rect key="frame" x="20" y="72" width="560" height="0.0"/>
+                                <rect key="frame" x="16" y="72" width="268" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="bB3-W2-mDN"/>
                                 </constraints>
@@ -137,7 +139,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4HH-Py-5a7">
-                                <rect key="frame" x="20" y="367" width="560" height="0.0"/>
+                                <rect key="frame" x="16" y="367" width="268" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="75" id="IMH-3i-HfE"/>
                                 </constraints>
@@ -151,7 +153,7 @@
                                 </variation>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lovedrecords.png" translatesAutoresizingMaskIntoConstraints="NO" id="xe1-Xc-5yL">
-                                <rect key="frame" x="20" y="372" width="210" height="210"/>
+                                <rect key="frame" x="16" y="372" width="210" height="210"/>
                                 <color key="backgroundColor" red="0.85882352939999995" green="0.17254901959999999" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="210" id="AT9-9R-Gpl"/>
@@ -167,7 +169,7 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61A-My-Jdl">
-                                <rect key="frame" x="530" y="582" width="50" height="0.0"/>
+                                <rect key="frame" x="234" y="582" width="50" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="H41-Dt-zXH"/>
                                     <constraint firstAttribute="width" constant="50" id="RB8-Iv-Gav"/>
@@ -184,7 +186,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Playcount" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oyp-Z6-ZQp">
-                                <rect key="frame" x="532" y="570" width="48" height="12"/>
+                                <rect key="frame" x="236" y="570" width="48" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -228,6 +230,8 @@
                             </mask>
                         </variation>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="600"/>
                     <connections>
                         <outlet property="albumCover" destination="xe1-Xc-5yL" id="6dt-6D-fyE"/>
                         <outlet property="albumName" destination="4HH-Py-5a7" id="xpa-Js-jDG"/>
@@ -238,13 +242,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uHH-R7-XVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1803" y="387"/>
+            <point key="canvasLocation" x="1458" y="387"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8Sr-b1-6XA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gpz-aK-0r8" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="600"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="isw-0F-kyE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -256,7 +262,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JIg-Qx-Bdy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="429" y="387"/>
+            <point key="canvasLocation" x="757" y="387"/>
         </scene>
     </scenes>
     <resources>
